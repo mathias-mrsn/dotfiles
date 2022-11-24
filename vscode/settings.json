@@ -1,0 +1,35 @@
+{
+    "workbench.colorTheme": "One Dark Pro Darker",
+    "workbench.colorCustomizations": {
+        "tab.activeBackground": "#202020",
+        "tab.inactiveBackground": "#000000",
+        "activityBar.background": "#000000", // Activity bar - bar is shown in the left side of the editor
+        "activityBar.border": "#494949", // Activity bar - border color of the activity bar
+        "statusBar.background": "#000000", // Status bar background color - status bar is shown in the bottom of the window
+        "titleBar.activeBackground": "#000000", // Title bar background color - title bar is shown in the top of the window
+        "editorGroupHeader.tabsBackground": "#141414", // Editor group header background color - editor group header is shown in the top of the editor
+        "editor.background": "#1c1c1c", // Editor background color
+        "sideBar.background": "#141414", // Side bar background color - side bar is shown in the left side of the editor
+        "sideBar.border": "#202020", // Side bar border color - side bar is shown in the left side of the editor
+        "editor.selectionBackground": "#606000"
+    },
+    "files.autoSave": "afterDelay",
+    "tabnine.experimentalAutoImports": true,
+    "editor.minimap.enabled": false,
+    "editor.inlineSuggest.enabled": true,
+    "42header.email": "mamaurai@student.42.fr",
+    "42header.username": "mamaurai",
+    "git.confirmSync": false,
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+
+    "editor.insertSpaces": true,
+    "editor.cursorSmoothCaretAnimation": true,
+    "editor.detectIndentation": false,
+    "editor.fontFamily": "Source Code Pro",
+    "editor.cursorBlinking": "smooth",
+    "editor.fontSize": 11,
+
+    "window.zoomLevel": -1.6,
+}
