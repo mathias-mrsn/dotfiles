@@ -11,7 +11,7 @@
         "editor.background": "#1c1c1c", // Editor background color
         "sideBar.background": "#141414", // Side bar background color - side bar is shown in the left side of the editor
         "sideBar.border": "#202020", // Side bar border color - side bar is shown in the left side of the editor
-        "editor.selectionBackground": "#606000"
+        "editor.selectionBackground": "#3b3b00"
     },
     "files.autoSave": "afterDelay",
     "tabnine.experimentalAutoImports": true,
