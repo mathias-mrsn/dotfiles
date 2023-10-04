@@ -43,3 +43,6 @@ opt.scrolloff = 8
 -- "-" is part of the word
 opt.iskeyword:append("-")
 
+-- Avoid .swp files
+opt.swapfile = false
+

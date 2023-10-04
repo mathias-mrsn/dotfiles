@@ -39,7 +39,7 @@ local ensure_packer = function()
     use('theprimeagen/harpoon')
     use('mbbill/undotree')
     use('tpope/vim-fugitive')
-
+    use('wakatime/vim-wakatime')
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v2.x',
