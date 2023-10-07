@@ -56,4 +56,5 @@ local ensure_packer = function()
         }
     }
     use("nvim-lualine/lualine.nvim")
+    use {'numToStr/Comment.nvim'}
 end)
