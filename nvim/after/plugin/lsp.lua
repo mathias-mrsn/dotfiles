@@ -12,6 +12,7 @@ lsp.ensure_installed = {
     "tailwindcss",
     "lua_ls",
     "clangd",
+    "asm"
 }
 
 local status_cmp, cmp = pcall(require, "cmp")

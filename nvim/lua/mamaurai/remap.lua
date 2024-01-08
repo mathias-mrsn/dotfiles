@@ -1,7 +1,7 @@
 vim.g.mapleader = " "
 
 -- open the explorer
-vim.keymap.set("n", "<leader>ex", vim.cmd.Ex)
+-- vim.keymap.set("n", "<leader>ex", vim.cmd.Ex)
 
 -- exit insert mode
 vim.keymap.set("i", "jk", "<ESC>")
@@ -22,3 +22,6 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- clear highlights
 vim.keymap.set("n", "<leader>nh", ":nohl<CR>")
+
+-- nvim-tree
+vim.keymap.set('n', '<leader>e', "<cmd>NvimTreeToggle<CR>")

@@ -1,3 +1,4 @@
 require("mamaurai.remap")
-require("mamaurai.packer")
-require("mamaurai.option")
+require("mamaurai.lazy")
+require("mamaurai.options")
+

@@ -1,6 +1,3 @@
-local setup, color = pcall(require, "andromeda")
-if not setup then
-    return
-end
+vim.cmd('colorscheme kanagawa-wave')
 
-color.setup()
+
