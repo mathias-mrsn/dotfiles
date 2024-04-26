@@ -46,3 +46,10 @@ alias dx="docker exec -it"
 
 # Bat
 alias cat="bat"
+
+# Zellij
+alias z="zellij -l compact"
+alias zls="zellij ls"
+alias za="zellij attach -c"
+alias zk="zellij kill-session"
+alias zka="zellij kill-all-sessions"

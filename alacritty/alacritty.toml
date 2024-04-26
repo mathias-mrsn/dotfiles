@@ -1,0 +1,49 @@
+live_config_reload = true
+
+shell = "/bin/zsh"
+
+[env]
+TERM = "xterm-256color"
+
+[window]
+decorations = "buttonless"
+dynamic_padding = false
+opacity = 1
+option_as_alt = "Both"
+startup_mode = "Windowed"
+
+[window.padding]
+x = 25
+y = 20
+
+[font]
+size = 20.0
+
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+style = "Heavy"
+
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font"
+style = "Heavy Italic"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+style = "Medium Italic"
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Medium"
+
+[colors.primary]
+background = "#000000"
+foreground = "#afb4c3"
+
+[mouse]
+hide_when_typing = true
+
+[keyboard]
+bindings = [
+{ key = "F", mods = "Command", action = "ToggleFullscreen" },
+{ key = "H", mods = "Command", action = "Hide" },
+]
