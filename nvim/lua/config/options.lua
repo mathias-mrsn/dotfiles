@@ -13,6 +13,7 @@ vim.opt.inccommand = "split"
 vim.opt.cursorline = true
 vim.opt.number = true
 vim.opt.relativenumber = true
+vim.opt.scrolloff = 8
 
 -- vim.cmd("let g:netrw_liststyle = 3")
 

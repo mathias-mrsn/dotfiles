@@ -32,21 +32,21 @@ return {
 
     return {
       -- Harpoon marked files 1 through 4
-      {"<a-1>", function() harpoon:list():select(1) end, desc ="Harpoon buffer 1"},
-      {"<a-2>", function() harpoon:list():select(2) end, desc ="Harpoon buffer 2"},
-      {"<a-3>", function() harpoon:list():select(3) end, desc ="Harpoon buffer 3"},
-      {"<a-4>", function() harpoon:list():select(4) end, desc ="Harpoon buffer 4"},
+      {"<C-y>", function() harpoon:list():select(1) end, desc ="Harpoon buffer 1"},
+      -- {"<C-u>", function() harpoon:list():select(2) end, desc ="Harpoon buffer 2"},
+      {"<C-i>", function() harpoon:list():select(3) end, desc ="Harpoon buffer 3"},
+      {"<C-o>", function() harpoon:list():select(4) end, desc ="Harpoon buffer 4"},
 
       -- Harpoon next and previous.
-      {"<a-5>", function() harpoon:list():next() end, desc ="Harpoon next buffer"},
-      {"<a-6>", function() harpoon:list():prev() end, desc ="Harpoon prev buffer"},
+      {"<C-n>", function() harpoon:list():next() end, desc ="Harpoon next buffer"},
+      {"<C-p>", function() harpoon:list():prev() end, desc ="Harpoon prev buffer"},
 
       -- Harpoon user interface.
-      {"<a-7>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, desc ="Harpoon Toggle Menu"},
-      {"<a-8>", function() harpoon:list():append() end, desc ="Harpoon add file"},
+      {"<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, desc ="Harpoon Toggle Menu"},
+      {"<leader>ha", function() harpoon:list():add() end, desc ="Harpoon add file"},
 
       -- Use Telescope as Harpoon user interface.
-      {"<leader>cc", function() toggle_telescope(harpoon:list() )end, desc ="Open Harpoon window"},
+      {"<leader>ht", function() toggle_telescope(harpoon:list() )end, desc ="Open Harpoon window"},
     }
   end,
 

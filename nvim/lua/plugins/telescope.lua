@@ -32,12 +32,13 @@ return {
             },
           },
         },
-        pickers = {
-          find_files = {
-            -- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
-            find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
-          },
-        },
+        pickers = nil,
+        -- pickers = {
+        --   find_files = {
+        --     -- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
+        --     find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
+        --   },
+        -- },
         extensions = {
           ["ui-select"] = {
             require("telescope.themes").get_dropdown {
@@ -45,6 +46,7 @@ return {
           }
         }
       }
+
       require("telescope").load_extension("ui-select")
 
       local builtin = require('telescope.builtin')

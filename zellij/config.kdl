@@ -3,7 +3,25 @@ keybinds clear-defaults=true {
 		// unbind "Ctrl p"
 		// unbind "Ctrl o"
 		// unbind "Ctrl h"
-    bind "Ctrl q" { Detach; }
+    // bind "Ctrl q" { Detach; }
+
+
+    //bind "Alt f" {
+    //  LaunchPlugin "filepicker" {
+    //    floating true
+    //    close_on_selection true
+    //  };
+    //}
+
+    bind "Alt f" {
+      Run "ranger" {
+        // cwd "/tmp"
+        direction "Floating"
+      }
+      TogglePaneEmbedOrFloating;
+    }
+
+
 	}
   
   shared {
@@ -31,6 +49,7 @@ keybinds clear-defaults=true {
 		bind "L" { Resize "Decrease Right"; }
 		bind "=" "+" { Resize "Increase"; }
 		bind "-" { Resize "Decrease"; }
+    bind "t" { TogglePaneFrames; }
 	}
 
   move {
@@ -269,7 +288,7 @@ default_layout "compact"
 //   - true (default)
 //   - false
 //
-// mouse_mode false
+mouse_mode true
 
 // Configure the scroll back buffer size
 // This is the number of lines zellij stores for each pane in the scroll back
@@ -306,7 +325,7 @@ default_layout "compact"
 // Path to the default editor to use to edit pane scrollbuffer
 // Default: $EDITOR or $VISUAL
 //
-// scrollback_editor "/usr/bin/vim"
+scrollback_editor "/opt/homebrew/bin/nvim"
 
 // When attaching to an existing session with other users,
 // should the session be mirrored (true)
@@ -321,4 +340,4 @@ default_layout "compact"
 
 // The folder in which Zellij will look for themes
 //
-// theme_dir "/Users/omerhamerman/dotfiles/zellij/themes"
+// theme_dir "/Users/mathias.mrsn/.config/zellij/themes"
