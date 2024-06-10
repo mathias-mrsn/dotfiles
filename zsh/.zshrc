@@ -60,6 +60,8 @@ export PATH=/opt/homebrew/bin:$PATH
 export EDITOR=/opt/homebrew/bin/nvim
 export VISUAL=/opt/homebrew/bin/nvim
 
+alias c="clear"
+
 # Clang
 alias clangf="clang -Wall -Werror -Wextra"
 alias clangfs="clang -Wall -Werror -Wextra -g3 -fsanitize=address"
@@ -122,8 +124,13 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
-# History
+# FZF
+if [[ ! "$PATH" == */home/mathiasmrsn/.fzf/bin* ]]; then
+  PATH="${PATH:+${PATH}:}/home/mathiasmrsn/.fzf/bin"
+fi
 eval "$(fzf --zsh)"
+
+# History
 eval "$(zoxide init --cmd cd zsh)"
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward

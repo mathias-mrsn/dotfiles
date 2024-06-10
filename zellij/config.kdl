@@ -1,18 +1,5 @@
 keybinds clear-defaults=true {
 	normal {
-		// unbind "Ctrl p"
-		// unbind "Ctrl o"
-		// unbind "Ctrl h"
-    // bind "Ctrl q" { Detach; }
-
-
-    //bind "Alt f" {
-    //  LaunchPlugin "filepicker" {
-    //    floating true
-    //    close_on_selection true
-    //  };
-    //}
-
     bind "Alt f" {
       Run "ranger" {
         // cwd "/tmp"
@@ -20,8 +7,6 @@ keybinds clear-defaults=true {
       }
       TogglePaneEmbedOrFloating;
     }
-
-
 	}
   
   shared {
@@ -29,6 +14,13 @@ keybinds clear-defaults=true {
 		bind "Alt l" { MoveFocus "Right"; }
 		bind "Alt j" { MoveFocus "Down"; }
 		bind "Alt k" { MoveFocus "Up"; }
+
+    bind "Alt 1" { GoToTab 1; }
+    bind "Alt 2" { GoToTab 2; }
+    bind "Alt 3" { GoToTab 3; }
+    bind "Alt 4" { GoToTab 4; }
+    bind "Alt 5" { GoToTab 5; }
+    bind "Alt 6" { GoToTab 6; }
     // bind "Alt f" { ToggleFloatingPanes; }
   }
 
@@ -230,7 +222,7 @@ simplified_ui true
 // Choose the path to the default shell that zellij will use for opening new panes
 // Default: $SHELL
 //
-// default_shell "fish"
+default_shell "/bin/zsh"
 
 // Toggle between having pane frames around the panes
 // Options:

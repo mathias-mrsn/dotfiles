@@ -13,11 +13,11 @@ option_as_alt = "Both"
 startup_mode = "Windowed"
 
 [window.padding]
-x = 20
-y = 15
+x = 5
+y = 0
 
 [font]
-size = 18.0
+size = 12.0
 
 [font.bold]
 family = "JetBrainsMono Nerd Font"
