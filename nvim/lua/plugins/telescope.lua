@@ -14,21 +14,36 @@ return {
       -- This is your opts table
       require("telescope").setup {
         defaults = {
-          -- `hidden = true` is not supported in text grep commands.
-
+          layout_config = {
+            horizontal = {
+              prompt_position = "top",
+              width = 0.8,
+              preview_width = 0.5,
+            },
+            vertical = {
+              width = 0.5,
+              height = 0.7,
+              preview_cutoff = 1,
+              prompt_position = "top",
+              preview_height = 0.4,
+              mirror = true,
+            },
+          },         layout_strategy = "vertical",
           path_display = { "truncate" },
           mappings = {
             n = {
               ["<C-w>"] = actions.send_selected_to_qflist + actions.open_qflist,
+              ["q"] = actions.close,
             },
             i = {
-              ["<C-j>"] = actions.cycle_history_next,
-              ["<C-k>"] = actions.cycle_history_prev,
+              ["<esc>"] = actions.close,
+              -- ["<C-j>"] = actions.cycle_history_next,
+              -- ["<C-k>"] = actions.cycle_history_prev,
               -- ["<C-w>"] = actions.send_selected_to_qflist + actions.open_qflist,
               ["<C-x>"] = actions.delete_buffer,
               ["<C-q>"] = actions.close,
-              -- ["<C-s>"] = actions.cycle_previewers_next,
-              -- ["<C-a>"] = actions.cycle_previewers_prev,
+              ["<C-j>"] = actions.cycle_previewers_next,
+              ["<C-k>"] = actions.cycle_previewers_prev,
             },
           },
         },

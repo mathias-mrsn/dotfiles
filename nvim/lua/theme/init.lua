@@ -1,1 +1,1 @@
-require("theme.highlights").init()
+-- require("theme.highlights").init()

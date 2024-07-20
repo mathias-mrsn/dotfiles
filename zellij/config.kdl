@@ -14,7 +14,7 @@ keybinds clear-defaults=true {
     //}
 
     bind "Alt f" {
-      Run "ranger" {
+      Run "yy" {
         // cwd "/tmp"
         direction "Floating"
       }
@@ -29,6 +29,14 @@ keybinds clear-defaults=true {
 		bind "Alt l" { MoveFocus "Right"; }
 		bind "Alt j" { MoveFocus "Down"; }
 		bind "Alt k" { MoveFocus "Up"; }
+
+    bind "Alt 1" { GoToTab 1; }
+    bind "Alt 2" { GoToTab 2; }
+    bind "Alt 3" { GoToTab 3; }
+    bind "Alt 4" { GoToTab 4; }
+    bind "Alt 5" { GoToTab 5; }
+    bind "Alt 6" { GoToTab 6; }
+    bind "Alt 7" { GoToTab 7; }
     // bind "Alt f" { ToggleFloatingPanes; }
   }
 
@@ -49,7 +57,7 @@ keybinds clear-defaults=true {
 		bind "L" { Resize "Decrease Right"; }
 		bind "=" "+" { Resize "Increase"; }
 		bind "-" { Resize "Decrease"; }
-    bind "t" { TogglePaneFrames; }
+    bind "t" { TogglePaneFrames; SwitchToMode "Normal"; }
 	}
 
   move {
@@ -269,7 +277,7 @@ pane_frames true
 // Choose the theme that is specified in the themes section.
 // Default: default
 //
-theme "default"
+theme "catppuccin-mocha" // or latte, frappe and macchiato
 
 // The name of the default layout to load on startup
 // Default: "default"

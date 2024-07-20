@@ -57,14 +57,29 @@ plugins=(git)
 # Commun
 export PATH=/usr/local/bin:$PATH
 export PATH=/opt/homebrew/bin:$PATH
+export PATH=$HOME/.cargo/bin:$PATH
 export EDITOR=/opt/homebrew/bin/nvim
 export VISUAL=/opt/homebrew/bin/nvim
+
+alias c="clear"
 
 # Clang
 alias clangf="clang -Wall -Werror -Wextra"
 alias clangfs="clang -Wall -Werror -Wextra -g3 -fsanitize=address"
 alias clangf++="clang++ -Wall -Werror -Wextra -std=c++98"
 alias clangfs++="clang++ -Wall -Werror -Wextra -g3 -fsanitize=address -std=c++98"
+
+# Terraform
+alias tf=terraform
+alias tfi="terraform init"
+alias tfp="terraform plan"
+alias tfa="terraform apply"
+alias tfaa="terraform apply -auto-approve"
+alias tfd="terraform destroy"
+alias tfdd="terraform destroy -auto-approve"
+alias tfv="terraform validate"
+alias tff="terraform fmt"
+alias tfv="terraform version"
 
 # Git
 alias gc="git commit -m"
@@ -139,5 +154,15 @@ setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
+
+# Yazi
+function yy() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
 
 
