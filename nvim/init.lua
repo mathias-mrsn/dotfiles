@@ -1,4 +1,8 @@
-require("config.keymapping")
-require("config.options")
-require("config.pm")
+require("editor.options")
+require("editor.keymaps")
+require("editor.plugins")
+require("languages.terraform")
+
 require("theme")
+
+require("editor.after")

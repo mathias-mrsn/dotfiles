@@ -13,8 +13,7 @@ local palette = {
     orange = "#de935f",
     purple = "#b08cba",
     -- base
-    -- bg = "#272b30",
-    bg = "#000000",
+    bg = "#272b30",
     text = "#afb4c3",
     strong_text = "#80838f",
     faded_text = "#686d75",

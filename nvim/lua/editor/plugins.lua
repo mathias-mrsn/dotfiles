@@ -1,5 +1,5 @@
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   vim.fn.system({
     "git",
@@ -12,6 +12,12 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+local options = {
+    defaults = {
+        lazy = false,
+        version = "*",
+    },
+    lockfile = "~/.config/nvim/lazy-lock.json",
+}
 
-require("lazy").setup("plugins")
-
+require("lazy").setup("plugins", options)

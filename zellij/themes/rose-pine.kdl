@@ -1,0 +1,15 @@
+themes {
+	rose-pine {
+		bg "#393743"
+		fg "#aaaa00"
+		red "#eb6f92"
+		green "#e3bebb"
+		blue "#0000ff"
+		yellow "#f6c177"
+		magenta "#c4a7e7"
+		orange "#fe640b"
+		cyan "#00ff00"
+		black "#191723"
+		white "#292733"
+	}
+}

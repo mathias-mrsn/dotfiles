@@ -1,81 +1,50 @@
 return {
-  -- Fuzzy finder
-  -- Source -> https://github.com/exosyphon/nvim/blob/main/lua/plugins/telescope.lua
-
-  {
-    'nvim-telescope/telescope.nvim',
-    tag = '0.1.6',
-    dependencies = { 'nvim-lua/plenary.nvim' }
+  "nvim-telescope/telescope.nvim",
+  branch = "0.1.x",
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+    "nvim-tree/nvim-web-devicons",
+    "folke/todo-comments.nvim",
   },
-  {
-    "nvim-telescope/telescope-ui-select.nvim",
-    config = function()
-      local actions = require("telescope.actions")
-      -- This is your opts table
-      require("telescope").setup {
-        defaults = {
-          layout_config = {
-            horizontal = {
-              prompt_position = "top",
-              width = 0.8,
-              preview_width = 0.5,
-            },
-            vertical = {
-              width = 0.5,
-              height = 0.7,
-              preview_cutoff = 1,
-              prompt_position = "top",
-              preview_height = 0.4,
-              mirror = true,
-            },
-          },         layout_strategy = "vertical",
-          path_display = { "truncate" },
-          mappings = {
-            n = {
-              ["<C-w>"] = actions.send_selected_to_qflist + actions.open_qflist,
-              ["q"] = actions.close,
-            },
-            i = {
-              ["<esc>"] = actions.close,
-              -- ["<C-j>"] = actions.cycle_history_next,
-              -- ["<C-k>"] = actions.cycle_history_prev,
-              -- ["<C-w>"] = actions.send_selected_to_qflist + actions.open_qflist,
-              ["<C-x>"] = actions.delete_buffer,
-              ["<C-q>"] = actions.close,
-              ["<C-j>"] = actions.cycle_previewers_next,
-              ["<C-k>"] = actions.cycle_previewers_prev,
-            },
+  config = function()
+    local telescope = require("telescope")
+    local actions = require("telescope.actions")
+    local transform_mod = require("telescope.actions.mt").transform_mod
+
+    local trouble = require("trouble")
+    local trouble_telescope = require("trouble.sources.telescope")
+
+    -- or create your custom action
+    local custom_actions = transform_mod({
+      open_trouble_qflist = function(prompt_bufnr)
+        trouble.toggle("quickfix")
+      end,
+    })
+
+    telescope.setup({
+      defaults = {
+        path_display = { "smart" },
+        mappings = {
+          i = {
+            ["<C-k>"] = actions.move_selection_previous, -- move to prev result
+            ["<C-j>"] = actions.move_selection_next,     -- move to next result
+            ["<C-q>"] = actions.send_selected_to_qflist + custom_actions.open_trouble_qflist,
+            ["<C-t>"] = trouble_telescope.open,
           },
         },
-        pickers = nil,
-        -- pickers = {
-        --   find_files = {
-        --     -- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
-        --     find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
-        --   },
-        -- },
-        extensions = {
-          ["ui-select"] = {
-            require("telescope.themes").get_dropdown {
-            }
-          }
-        }
-      }
+      },
+    })
 
-      require("telescope").load_extension("ui-select")
+    telescope.load_extension("fzf")
 
-      local builtin = require('telescope.builtin')
+    -- set keymaps
+    local keymap = vim.keymap -- for conciseness
 
-      vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-      vim.keymap.set('n', '<leader>fg', '<cmd>lua require("telescope.builtin").live_grep({ glob_pattern = "!{spec,test}"})<CR>', {})
-      vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-      vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
-      vim.keymap.set('n', '<leader>fs', builtin.lsp_document_symbols, {})
-      -- vim.keymap.set('n', '<leader>fi', '<cmd>AdvancedGitSearch<CR>', {})
-      vim.keymap.set('n', '<leader>fo', builtin.oldfiles, {})
-      vim.keymap.set('n', '<leader>fw', builtin.grep_string, {})
-
-    end
-
-  }
+    keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
+    keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
+    keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
+    keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
+    keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
+  end,
 }
