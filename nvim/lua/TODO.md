@@ -1,5 +1,4 @@
 [ ]: carbon-now
 [ ]: cloak
-[ ]: git
-[ ]: lazydev
+[ ]: lazydev and lazygit
 [ ]: neogen
