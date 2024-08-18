@@ -45,11 +45,11 @@ return {
         mappings = {
           -- When `true`, creates all the mappings that are not set to `false`.
           --- @type boolean
-          enabled = false,
+          enabled = true,
           -- Sets a global mapping to Neovim, which allows you to toggle the plugin.
           -- When `false`, the mapping is not created.
           --- @type string
-          toggle = "<Leader>np",
+          toggle = "<Leader>zz",
           -- Sets a global mapping to Neovim, which allows you to toggle the left side buffer.
           -- When `false`, the mapping is not created.
           --- @type string
