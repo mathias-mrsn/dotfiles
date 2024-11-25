@@ -1,3 +1,3 @@
-return {
-  "laytan/cloak.nvim"
-}
+-- return {
+--   "laytan/cloak.nvim"
+-- }

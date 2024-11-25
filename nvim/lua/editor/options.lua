@@ -22,14 +22,15 @@ opt.shiftwidth = 2
 opt.smartindent = true
 opt.tabstop = 2
 opt.softtabstop = 2
+opt.scrolloff = 8
 
 opt.list = true
 opt.listchars = {
-    tab = "▸ ",
-    trail = "·",
-    precedes = "←",
-    extends = "→",
-    nbsp = "+",
+  tab = "▸ ",
+  trail = "·",
+  precedes = "←",
+  extends = "→",
+  nbsp = "+",
 }
 
 opt.fillchars = { eob = " ", diff = "" }
@@ -48,12 +49,12 @@ opt.showtabline = 1
 opt.wrap = false
 
 opt.whichwrap:append {
-    ["<"] = true,
-    [">"] = true,
-    ["["] = true,
-    ["]"] = true,
-    h = true,
-    l = true,
+  ["<"] = true,
+  [">"] = true,
+  ["["] = true,
+  ["]"] = true,
+  h = true,
+  l = true,
 }
 
 opt.autoread = true

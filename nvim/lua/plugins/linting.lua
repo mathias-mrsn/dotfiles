@@ -1,3 +1,5 @@
+-- Show linting error
+
 return {
   "mfussenegger/nvim-lint",
   event = { "BufReadPre", "BufNewFile" },
