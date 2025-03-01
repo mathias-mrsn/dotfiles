@@ -1,124 +1,21 @@
 return {
-  {
-    "nvim-treesitter/nvim-treesitter",
-    version = "*",
-    event = "BufEnter",
-    config = function()
-      local plugin = require("nvim-treesitter.configs")
-
-      plugin.setup {
-        highlight = {
-          enable = true,
-          use_languagetree = true,
-        },
-        indent = {
-          enable = true,
-        },
-        ensure_installed = {
-          "bash",
-          "css",
-          "diff",
-          "dockerfile",
-          "git_rebase",
-          "gitattributes",
-          "gitcommit",
-          "gitignore",
-          "html",
-          "javascript",
-          "json",
-          "kdl",
-          "lua",
-          "markdown",
-          "markdown_inline",
-          "regex",
-          "rust",
-          "scss",
-          "toml",
-          "typescript",
-          "yaml",
-          "python",
-          "hcl",
-          "terraform"
-        },
-        textobjects = {
-          select = {
-            enable = true,
-            lookahead = true,
-            keymaps = {
-              ["af"] = "@function.outer",
-              ["if"] = "@function.inner",
-              ["ar"] = "@return.outer",
-              ["ir"] = "@return.inner",
-              ["ab"] = "@block.outer",
-              ["ib"] = "@block.inner",
-              ["ae"] = "@class.outer",
-              ["ie"] = "@class.inner",
-              ["ac"] = "@comment.outer",
-              ["ic"] = "@comment.inner",
-              ["ap"] = "@parameter.outer",
-              ["ip"] = "@parameter.inner",
-              ["am"] = "@conditional.outer",
-              ["im"] = "@conditional.inner",
-              ["aa"] = "@assignment.outer",
-              ["ian"] = "@assignment.lhs",
-              ["iav"] = "@assignment.rhs",
-              ["as"] = "@statement.outer",
-              ["is"] = "@statement.inner",
-              ["al"] = "@loop.outer",
-              ["il"] = "@loop.inner",
-              ["ax"] = "@call.outer",
-              ["ix"] = "@call.inner",
-            },
-          },
-          move = {
-            enable = true,
-            set_jumps = true,
-            goto_next = {
-              ["]f"] = "@function.outer",
-              ["]r"] = "@return.outer",
-              ["]b"] = "@block.outer",
-              ["]e"] = "@class.outer",
-              ["]c"] = "@comment.outer",
-              ["]p"] = "@parameter.outer",
-              ["]m"] = "@conditional.outer",
-              ["]an"] = "@assignment.lhs",
-              ["]av"] = "@assignment.rhs",
-              ["]s"] = "@statement.outer",
-              ["]l"] = "@loop.outer",
-              ["]xa"] = "@call.outer",
-              ["]xi"] = "@call.inner",
-            },
-            goto_previous = {
-              ["[f"] = "@function.outer",
-              ["[r"] = "@return.outer",
-              ["[b"] = "@block.outer",
-              ["[e"] = "@class.outer",
-              ["[c"] = "@comment.outer",
-              ["[p"] = "@parameter.outer",
-              ["[m"] = "@conditional.outer",
-              ["[an"] = "@assignment.lhs",
-              ["[av"] = "@assignment.rhs",
-              ["[s"] = "@statement.outer",
-              ["[l"] = "@loop.outer",
-              ["[xa"] = "@call.outer",
-              ["[xi"] = "@call.inner",
-            },
-          },
-          swap = {
-            enable = true,
-            swap_next = {
-              ["<leader>a"] = "@parameter.inner",
-            },
-            swap_previous = {
-              ["<leader>a"] = "@parameter.inner",
-            },
-          },
-        },
+  "nvim-treesitter/nvim-treesitter",
+  build = ":TSUpdate",
+  config = function()
+    require'nvim-treesitter.configs'.setup {
+      ensure_installed = {"c", "lua"},
+      auto_install = false,
+      hightlight = {
+        enable = true,
+        disable = function(lang, buf)
+          local max_filesize = 100 * 1024
+          local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+          if ok and stats and stats.size > max_filesize then
+            return true
+          end
+        end,
+        additional_vim_regex_highlighting = false,
       }
-    end,
-    build = ":TSUpdate",
-  },
+    }
+  end,
 }
-
-
--- TODO: configure keymaps inside treesitter

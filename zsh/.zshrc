@@ -49,7 +49,7 @@ bindkey -e
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+# ZSH_THEME="robbyrussell"
 
 plugins=(git)
 
@@ -108,7 +108,7 @@ alias dl="docker ps -l -q"
 alias dx="docker exec -it"
 
 # Bat
-alias cat="bat"
+# alias cat="bat"
 
 # Zellij
 alias zj="zellij -l compact"
@@ -127,10 +127,10 @@ alias vi="nvim"
 alias vimf='nvim `fzf`'
 
 # Exa
-alias ls="exa"
-alias l="exa -alh"
-alias lst="exa -alh --tree"
-
+# alias ls="exa"
+# alias l="exa -alh"
+# alias lst="exa -alh --tree"
+#
 # Zoxide
 eval "$(zoxide init zsh)"
 alias cd="z"

@@ -1,5 +1,1 @@
-vim.cmd.colorscheme "gruvbox-material"
-
-
-
-vim.g.trouble_lualine = true
+vim.cmd.colorscheme("base16-black-metal-gorgoroth")
