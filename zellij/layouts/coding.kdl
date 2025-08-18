@@ -5,19 +5,15 @@ layout {
     pane size=1 borderless=true {
       plugin location="zellij:compact-bar"
     }
+    pane size=1 borderless=true {
+        plugin location="status-bar"
+    }
   }
 
   tab name="editor" {
     pane name="neovim"
   }
   tab name="terminal" {
-    pane split_direction="vertical" {
-      pane size="30%" stacked=true {
-        pane command="htop" 
-        pane command="htop" 
-      }
-      pane name="terminal" size="70%"
-    }
-
+    pane name="terminal"
   }
 }

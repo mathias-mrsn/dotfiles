@@ -60,10 +60,12 @@ export PATH=/usr/local/bin:$PATH
 export PATH=/opt/homebrew/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/.nvm:$PATH
+export PATH=/opt/X11/bin:$PATH
 export EDITOR=/opt/homebrew/bin/nvim
 export VISUAL=/opt/homebrew/bin/nvim
 
 alias c="clear"
+alias l="ls -alh --color=auto"
 
 # Clang
 alias clangf="clang -Wall -Werror -Wextra"
@@ -165,6 +167,16 @@ function yy() {
 		cd -- "$cwd"
 	fi
 	rm -f -- "$tmp"
+}
+
+function byebyedocker() {
+  docker stop $(docker ps -qa) >/dev/null 2>&1
+  docker rmi -f $(docker images -qa) >/dev/null 2>&1
+  sudo docker rm $(sudo docker volume ls -q) >/dev/null 2>&1
+  sudo docker system prune -af >/dev/null 2>&1
+  sudo docker volume rm $(sudo docker volume ls -q) >/dev/null 2>&1
+
+  rm -rf /home/mamaurai/data > /dev/null 2>&1
 }
 
 
