@@ -16,8 +16,8 @@ return {
 				end,
 				terraform = { "terraform_fmt" },
 				tf = { "terraform_fmt" },
-				["*"] = { "codespell" },
-				["_"] = { "trim_whitespace" },
+				-- ["*"] = { "codespell" },
+				-- ["_"] = { "trim_whitespace" },
 			},
 			default_format_opts = {
 				lsp_format = "fallback",

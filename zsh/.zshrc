@@ -61,8 +61,8 @@ export PATH=/opt/homebrew/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/.nvm:$PATH
 export PATH=/opt/X11/bin:$PATH
-export EDITOR=/opt/homebrew/bin/nvim
-export VISUAL=/opt/homebrew/bin/nvim
+export EDITOR=/usr/bin/nvim
+export VISUAL=/usr/bin/nvim
 
 alias c="clear"
 alias l="ls -alh --color=auto"
