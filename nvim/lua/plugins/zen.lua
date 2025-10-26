@@ -1,14 +1,11 @@
-local fn = {}
-
-NVNoNeckPain = {
-	"shortcuts/no-neck-pain.nvim",
-	opts = {
-		width = 150,
-		autocmds = {
-			enableOnVimEnter = true,
-			skipEnteringNoNeckPainBuffer = true,
+return {
+	-- Lua
+	{
+		"folke/zen-mode.nvim",
+		opts = {
+			-- your configuration comes here
+			-- or leave it empty to use the default settings
+			-- refer to the configuration section below
 		},
 	},
 }
-
-return { NVNoNeckPain }

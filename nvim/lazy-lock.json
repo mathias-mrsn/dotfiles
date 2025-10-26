@@ -24,7 +24,6 @@
   "mason.nvim": { "branch": "main", "commit": "fc98833b6da5de5a9c5b1446ac541577059555be" },
   "neodev.nvim": { "branch": "main", "commit": "46aa467dca16cf3dfe27098042402066d2ae242d" },
   "nightfox.nvim": { "branch": "main", "commit": "ba47d4b4c5ec308718641ba7402c143836f35aa9" },
-  "no-neck-pain.nvim": { "branch": "main", "commit": "ecdfe60f23134089fac92659e688b65fdd8b5cc0" },
   "nvim-cmp": { "branch": "main", "commit": "b5311ab3ed9c846b585c0c15b7559be131ec4be9" },
   "nvim-dap": { "branch": "master", "commit": "8df427aeba0a06c6577dc3ab82de3076964e3b8d" },
   "nvim-dap-ui": { "branch": "master", "commit": "73a26abf4941aa27da59820fd6b028ebcdbcf932" },
@@ -44,5 +43,6 @@
   "vim-fugitive": { "branch": "master", "commit": "4a745ea72fa93bb15dd077109afbb3d1809383f2" },
   "vim-tmux-navigator": { "branch": "master", "commit": "33afa80db65113561dc53fa732b7f5e53d5ecfd0" },
   "vim-wakatime": { "branch": "master", "commit": "7b53ba7882ba28b91b571fa4ffb2755378086837" },
-  "yazi.nvim": { "branch": "main", "commit": "1910c20ebb969934b05f0b14992bfff095587e18" }
+  "yazi.nvim": { "branch": "main", "commit": "1910c20ebb969934b05f0b14992bfff095587e18" },
+  "zen-mode.nvim": { "branch": "main", "commit": "438a59c33763d79e34ceb394e012c3bfd6aa1084" }
 }

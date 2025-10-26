@@ -16,10 +16,9 @@ keybinds clear-defaults=true {
                 bind "e" { TogglePaneEmbedOrFloating; SwitchToMode "Normal"; }
                 bind "," { SwitchToMode "RenamePane"; PaneNameInput 0;}
                 bind "i" { TogglePanePinned; SwitchToMode "Normal"; }
-                // check
                 bind "q" { EditScrollback; }
-                bind "=" { NextSwapLayout; }
-                bind "-" { NextSwapLayout; }
+                bind "n" { NextSwapLayout; }
+                bind "p" { PreviousSwapLayout; }
                 bind "f" { TogglePaneEmbedOrFloating; }
         }
 

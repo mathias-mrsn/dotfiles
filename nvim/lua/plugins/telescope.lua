@@ -7,10 +7,16 @@ return {
 			defaults = {
 				find_files = {
 					theme = "ivy",
+					hidden = true,
 				},
 			},
 			extensions = {
 				fzf = {},
+			},
+			pickers = {
+				find_files = {
+					hidden = true,
+				},
 			},
 		})
 
