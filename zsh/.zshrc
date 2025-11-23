@@ -195,3 +195,6 @@ fi
 
 # opencode
 export PATH=/Users/mathias.mrsn/.opencode/bin:$PATH
+
+# Created by `pipx` on 2025-11-17 18:49:49
+export PATH="$PATH:/Users/mathias.mrsn/.local/bin"

@@ -40,16 +40,20 @@ vim.pack.add({
 	{ src = "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim" },
 
 	-- Editor
-	{ src = "https://github.com/norcalli/nvim-colorizer.lua" },
+	-- { src = "https://github.com/norcalli/nvim-colorizer.lua" },
 	{ src = "https://github.com/nvim-lualine/lualine.nvim" },
 	{ src = "https://github.com/vimpostor/vim-tpipeline" },
 	{ src = "https://github.com/numToStr/Comment.nvim" },
+
 	{ src = "https://github.com/RRethy/base16-nvim.git" },
+	{ src = "https://github.com/maxmx03/solarized.nvim" },
+	{ src = "https://github.com/rebelot/kanagawa.nvim" },
 
 	-- Tmux
 	{ src = "https://github.com/christoomey/vim-tmux-navigator" },
 
 	-- CMP
+	{ src = "https://github.com/saghen/blink.cmp",                         version = vim.version.range("^1") },
 	{ src = "https://github.com/fang2hou/blink-copilot" },
 	{ src = "https://github.com/zbirenbaum/copilot.lua" },
 	{ src = "https://github.com/copilotlsp-nvim/copilot-lsp" },
@@ -62,13 +66,37 @@ vim.pack.add({
 
 	-- Git
 	{ src = "https://github.com/tpope/vim-fugitive" },
+	{ src = "https://github.com/lewis6991/gitsigns.nvim" },
 
 	-- IA
 	{ src = "https://github.com/NickvanDyke/opencode.nvim" },
 })
 
-require("colorizer").setup()
-require("copilot").setup()
+-- local solarized = require('solarized')
+-- vim.o.termguicolors = true
+-- vim.o.background = 'dark'
+-- solarized.setup({})
+vim.cmd.colorscheme 'kanagawa'
+vim.o.background = 'dark'
+
+require("copilot").setup({})
+require("blink.cmp").setup({
+	fuzzy = { implementation = 'prefer_rust_with_warning' },
+	sources = {
+		default = { "lsp", "path", "buffer", "snippets", "copilot" },
+		providers = {
+			copilot = {
+				name = "copilot",
+				module = "blink-copilot",
+				score_offset = 100,
+				async = true,
+			},
+			snippets = {
+				score_offset = 100,
+			},
+		},
+	},
+})
 
 require("lualine").setup({
 	options = {
@@ -219,9 +247,9 @@ require("conform").setup({
 })
 
 
-vim.cmd.colorscheme("base16-black-metal-bathory")
+-- vim.cmd.colorscheme("base16-black-metal-bathory")
 vim.opt.shiftwidth = 8
-vim.g.python_recommended_style = 0
+vim.g.python_recommended_style = 1
 
 -- Global Keymaps
 
