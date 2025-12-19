@@ -12,6 +12,10 @@
       "rev": "cb938c2",
       "src": "https://github.com/aznhe21/actions-preview.nvim"
     },
+    "avante.nvim": {
+      "rev": "4d9d2de6fe9325a11aea7fed653478cb5b2b728b",
+      "src": "https://github.com/yetone/avante.nvim"
+    },
     "base16-nvim": {
       "rev": "a0d0806",
       "src": "https://github.com/RRethy/base16-nvim.git"
@@ -69,6 +73,10 @@
       "rev": "ad7146a",
       "src": "https://github.com/mason-org/mason.nvim"
     },
+    "nui.nvim": {
+      "rev": "de740991c12411b663994b2860f1a4fd0937c130",
+      "src": "https://github.com/MunifTanjim/nui.nvim"
+    },
     "nvim": {
       "rev": "234fc04",
       "src": "https://github.com/catppuccin/nvim"
@@ -97,6 +105,10 @@
     "plenary.nvim": {
       "rev": "b9fd522",
       "src": "https://github.com/nvim-lua/plenary.nvim"
+    },
+    "render-markdown.nvim": {
+      "rev": "6e0e8902dac70fecbdd8ce557d142062a621ec38",
+      "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
     },
     "snacks.nvim": {
       "rev": "3c5c23b",

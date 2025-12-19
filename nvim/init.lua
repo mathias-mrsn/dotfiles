@@ -41,8 +41,6 @@ vim.pack.add({
 
 	-- Editor
 	-- { src = "https://github.com/norcalli/nvim-colorizer.lua" },
-	{ src = "https://github.com/nvim-lualine/lualine.nvim" },
-	{ src = "https://github.com/vimpostor/vim-tpipeline" },
 	{ src = "https://github.com/numToStr/Comment.nvim" },
 
 	{ src = "https://github.com/RRethy/base16-nvim.git" },
@@ -70,6 +68,10 @@ vim.pack.add({
 
 	-- IA
 	{ src = "https://github.com/NickvanDyke/opencode.nvim" },
+	{ src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" },
+	{ src = "https://github.com/nvim-lua/plenary.nvim" },
+	{ src = "https://github.com/MunifTanjim/nui.nvim" },
+	{ src = "https://github.com/yetone/avante.nvim" },
 })
 
 -- local solarized = require('solarized')
@@ -80,6 +82,31 @@ vim.cmd.colorscheme 'kanagawa'
 vim.o.background = 'dark'
 
 require("copilot").setup({})
+require('render-markdown').setup({
+})
+require('avante').setup({
+	-- Example: Using snacks.nvim as input provider
+	-- mappings = {
+	-- 	toggle = "<leader>A",
+	-- 	ask = "<leader>E",
+	-- },
+	provider = "gemini",
+	providers = {
+		gemini = {
+			api_key_name = { "cat", "~/.gemini/api.txt" }
+		}
+	},
+	input = {
+		provider = "snacks", -- "native" | "dressing" | "snacks"
+		provider_opts = {
+			-- Snacks input configuration
+			title = "Avante Input",
+			icon = " ",
+			placeholder = "Enter your API key...",
+		},
+	},
+	-- Your other config here!
+})
 require("blink.cmp").setup({
 	fuzzy = { implementation = 'prefer_rust_with_warning' },
 	sources = {
@@ -95,34 +122,6 @@ require("blink.cmp").setup({
 				score_offset = 100,
 			},
 		},
-	},
-})
-
-require("lualine").setup({
-	options = {
-		icons_enabled = false,
-		theme = "auto",
-		component_separators = "",
-		section_separators = "",
-	},
-
-	sections = {
-		lualine_a = { "mode" },
-		lualine_b = { "branch" },
-		lualine_c = { "filename" },
-		lualine_d = { "tabs" },
-		lualine_x = {
-			function()
-				local encoding = vim.o.fileencoding
-				if encoding == "" then
-					return vim.bo.fileformat .. " :: " .. vim.bo.filetype
-				else
-					return encoding .. " :: " .. vim.bo.fileformat .. " :: " .. vim.bo.filetype
-				end
-			end,
-		},
-		lualine_y = { "tabs" },
-		lualine_z = { "location" },
 	},
 })
 
@@ -143,7 +142,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
 })
 
 vim.diagnostic.config({
-	-- if set to true show the error message next after the end of line
 	virtual_text = false,
 	signs = {
 		text = {
@@ -264,10 +262,10 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selected lines one l
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selected lines one line above" })
 
 -- vim.keymap.set("i", "jk", "<Esc>", { desc = "Exit Insert Mode" })
-vim.keymap.set({ "i", "n", "v" }, "<c-h>", ":TmuxNavigateLeft<CR>")
-vim.keymap.set({ "i", "n", "v" }, "<c-j>", ":TmuxNavigatedDown<CR>")
-vim.keymap.set({ "i", "n", "v" }, "<c-k>", ":TmuxNavigateUp<CR>")
-vim.keymap.set({ "i", "n", "v" }, "<c-l>", ":TmuxNavigateRight<CR>")
+vim.keymap.set({ "n", }, "<c-h>", ":TmuxNavigateLeft<CR>")
+vim.keymap.set({ "n", }, "<c-j>", ":TmuxNavigatedDown<CR>")
+vim.keymap.set({ "n", }, "<c-k>", ":TmuxNavigateUp<CR>")
+vim.keymap.set({ "n", }, "<c-l>", ":TmuxNavigateRight<CR>")
 
 -- Clear search, diff update and redraw
 -- taken from LazyVim
